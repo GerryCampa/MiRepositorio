@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {}
+
+        h1,
+        h2 {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: blue;
+            font-size: 50px;
+        }
+
+        button {
+
+            display: block;
+            margin: auto;
+            width: 200px;
+            height: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            color: green;
+            background-color: rgb(43, 226, 52);
+
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Frases célebres de Cervantes</h1>
+
+    <button onclick="todas()">Pide una frase</button>
+
+    <h2 id="cita"></h2>
+    <img id="imagen" src="" />
+
+
+
+
+
+
+    <script>
+        var frases = [
+            "La libertad, Sancho, es uno de los más preciosos dones...",
+            "En un lugar de la Mancha...",
+            "Solo piel y huesos fue...",
+            "Adarga antigua y galgo corredor...",
+            "They might be giants...",
+            "Come poco y cena más poco...",
+            "El edificio de la salud se fragua en la oficina del estómago..."
+        ];
+
+        //funcion lanzar frase
+
+        function lanzarFrase() {
+
+            var numAleat = Math.random() * (frases.length);
+            var numFrase = Math.floor(numAleat);
+
+            document.getElementById("cita").innerHTML = frases[numFrase];
+
+
+        }
+
+
+        //funcion lanzar color
+
+        function lanzarColor() {
+            var x = Math.floor(Math.random() * 256);
+            var y = Math.floor(Math.random() * 256);
+            var z = Math.floor(Math.random() * 256);
+            var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+
+            document.body.style.background = bgColor;
+        }
+
+
+        //funcion tamaño fuente (tamFont)
+
+        function tamFont() {
+            document.getElementById("cita").style.fontSize = Math.floor((Math.random() * 30) + 10) + "px";
+
+        }
+
+        //funcion cargar imagen
+
+        function cargaimagen() {
+            var imagenes = [
+                'sw1.jpg',
+                'sw2.jpg',
+                'sw3.jpg',
+                'cat1.jpg',
+                'earth.jpg'];
+
+            var numAleat = Math.random() * (imagenes.length);
+            var numFoto = Math.floor(numAleat);
+
+            document.getElementById('imagen').src = "img/" + imagenes[numFoto];
+
+        }
+
+        //funcion cambiar color al h2
+
+        function fraseColor() {
+            var x = Math.floor(Math.random() * 256);
+            var y = Math.floor(Math.random() * 256);
+            var z = Math.floor(Math.random() * 256);
+            var citaColor = "rgb(" + x + "," + y + "," + z + ")";
+
+            document.getElementById("cita").style.color = citaColor;
+
+        }
+
+
+
+        function todas(){
+            lanzarFrase();
+            lanzarColor();
+            cargaimagen();
+            tamFont();
+            fraseColor();
+        }
+
+        todas();
+    </script>
+
+
+
+</body>
+
+</html>

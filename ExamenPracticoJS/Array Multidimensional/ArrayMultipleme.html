@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayMulti</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 550px;
+            margin: 10px auto;
+            background-color:rgb(223, 209, 157);
+        }
+
+        h1 {
+            color: blue;
+            font-size: 40px;
+            font-family: 'Hepta Slab', serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        img {
+
+            width: 160px;
+            height: 200px;
+            border-radius: 0px 10px 10px 0px;
+            box-shadow: 1px 5px 3px rgb(73, 72, 72);
+
+        }
+
+        ul li {
+            background: #EEE;
+            margin: 10px;
+            list-style: none;
+            overflow: hidden;
+            padding: 12px;
+            margin: 20px;
+        }
+
+        ul li img {
+            float: right;
+            display: block;
+        }
+
+
+      
+        .seleccion {
+            margin-left: 180px;
+            margin-top: 60px;
+            margin-bottom: 130px;
+           
+        }
+
+        button {
+
+            display: block;
+            margin: auto;
+            width: 200px;
+            height: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(13, 4, 41);
+            background-color: rgb(103, 167, 175);
+
+        }
+
+        #demo {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Colección de libros</h1>
+    <h2>Escoge un libro y cárgalo</h2>
+
+    <div class=seleccion>
+
+        <select name="libros" id="miValor">
+            <option selected value="0"> La Galatea </option>
+            <option value="1">Don Quijote</option>
+            <option value="2">2001</option>
+            <option value="3">Imperiofobia</option>
+            <option value="4">Cita con Rama</option>
+            <option value="5">El fin de la infancia</option>
+            <option value="6">El árbol de la ciencia</option>
+        </select>
+    </div>
+
+    <button onclick="lanzarEnPantalla()">Cargar</button>
+    <div id="demo"></div>
+    <button onclick="cerrar()">Cerrar</button>
+
+    <script>
+        var libros = [
+            ['La Galatea', '-Miguel de Cervantes-', 'Clasicos', 'toystory4.jpg'],
+            ['EL Quijote', '-Miguel de Cervantes-', 'Clasicos', '2001.jpg'],
+            ['2001', '-Clarke-', 'cienciaficcion', 'stars.gif'],
+            ['Imperiofobia', '-Roca-', 'Historia', 'pedal.jpg'],
+            ['Cita con Rama', '-Clarke-', 'cienciaficcion', 'earth.jpg'],
+            ['El fin de la infancia', '-Clarke-', 'cienciaficcion', 'descarga2.jpg'],
+            ['El arbol de la ciencia', '-Baroja-', 'Clasicos', 'sw1.jpg'],
+        ];
+        function lanzarEnPantalla() {
+            var i = document.getElementById("miValor").value;
+            var miTexto = "<ul>";
+
+            miTexto += "<li><img src='img/" + libros[i][3] + "'><h2>" + libros[i][0] + " " + libros[i][1] + "</h2> <p class='" + libros[i][2] + "'>Género: " + libros[i][2] + "</p></li>";
+            miTexto += "</ul>"
+            document.getElementById('demo').innerHTML = miTexto;
+        }
+        function cerrar() {
+            document.getElementById('demo').innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>

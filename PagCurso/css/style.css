@@ -17,7 +17,7 @@
 .p-4 {transition: .5s;
 }
 
-.p-4:hover i{transform: scale(1.6)}
+.p-4:hover {transform: scale(1.6)}
 
 
 
@@ -26,9 +26,11 @@
 .bygenee {
 
     font-family: 'Notable', sans-serif;
-    color: #C38407;
+    font-size: 25px;
+    color: rgb(245, 212, 146);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 
 }
+
 
